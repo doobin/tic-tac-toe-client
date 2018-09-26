@@ -19,8 +19,8 @@ const signInSuccess = function (response) {
   $('#display-message').css('color', 'green')
   $('#sign-in-form').trigger('reset')
   store.user = response.user
-  $('#sign-up-form').addClass('hidden')
-  $('#sign-in-form').addClass('hidden')
+  $('#sign-up-form').hide('hidden')
+  $('#sign-in-form').hide('hidden')
   $('#change-password-form').removeClass('hidden')
   $('#sign-out').removeClass('hidden')
 }
@@ -43,11 +43,27 @@ const passwordChangeFailure = function () {
   $('#change-password-form').trigger('reset')
 }
 
+const signOutSuccess = function () {
+  $('#display-message').html('Sign Out Success')
+  $('#display-message').css('color', 'green')
+  $('#sign-up-form').removeClass('hidden')
+  $('#sign-in-form').removeClass('hidden')
+  $('#change-password-form').hide('hidden')
+  $('#sign-out').hide('hidden')
+}
+
+const signOutFailure = function () {
+  $('#display-message').html('Sign Out Failed... Try Again!!!')
+  $('#display-message').css('color', 'red')
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
   signInSuccess,
   signInFailure,
   passwordChangeSuccess,
-  passwordChangeFailure
+  passwordChangeFailure,
+  signOutSuccess,
+  signOutFailure
 }

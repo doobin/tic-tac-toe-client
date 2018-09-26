@@ -16,7 +16,7 @@
       <br>
       <h3 id="display-message"></h3>
       <br>
-      <form id="sign-up-form">
+      <form id="sign-up-form" class="hidden">
         <legend> Sign Up </legend>
         <input required type="email" name="credentials[email]" placeholder="enter email">
         <input required type="password" name="credentials[password]" placeholder="create password">
@@ -24,7 +24,7 @@
         <input type="submit">
       </form>
       <br>
-      <form id="sign-in-form">
+      <form id="sign-in-form" class="hidden">
         <legend> Sign In </legend>
         <input required type="email" name="credentials[email]" placeholder="enter email">
         <input required type="password" name="credentials[password]" placeholder="enter password">
@@ -38,21 +38,23 @@
         <input type="submit">
       </form>
       <br>
+      <button id="sign-out" class="hidden"> Sign Out </button>
+      <br>
       <table id="game-board">
         <tr>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td class="square"></td>
+          <td class="square"></td>
+          <td class="square"></td>
         </tr>
         <tr>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td class="square"></td>
+          <td class="square"></td>
+          <td class="square"></td>
         </tr>
         <tr>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td class="square"></td>
+          <td class="square"></td>
+          <td class="square"></td>
         </tr>
       </table>
 
