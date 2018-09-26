@@ -34,13 +34,13 @@ const signInFailure = function () {
 const passwordChangeSuccess = function () {
   $('#display-message').html('Password Change Success')
   $('#display-message').css('color', 'green')
-  $('#password-change-form').trigger('reset')
+  $('#change-password-form').trigger('reset')
 }
 
 const passwordChangeFailure = function () {
   $('#display-message').html('Password Change Failed... Try Again!!!')
   $('#display-message').css('color', 'red')
-  $('#password-change-form').trigger('reset')
+  $('#change-password-form').trigger('reset')
 }
 
 module.exports = {
