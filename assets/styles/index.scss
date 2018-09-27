@@ -1,36 +1,35 @@
 @import '~bootstrap/scss/bootstrap';
 
 table {
-  width: 75%;
   margin: auto;
-  margin-top: 10%;
-  margin-bottom: 10%
 }
-td {
-  width: 33.333%;
+
+.square {
+  height: 80px;
+  width: 80px;
+  font-size: 40pt;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
 }
-td:after {
-  content: '';
-  display: block;
-  margin-top: 100%;
-}
-table {
-  border-collapse: collapse;
-}
-td {
-  border: 6px solid #222;
-}
-td:first-of-type {
-  border-left-color: transparent;
-  border-top-color: transparent;
-}
-td:nth-of-type(2) {
-  border-top-color: transparent;
-}
-td:nth-of-type(3) {
-  border-right-color: transparent;
-  border-top-color: transparent;
-}
-tr:nth-of-type(3) td {
-  border-bottom-color: transparent;
-}
+
+// table {
+//   border-collapse: collapse;
+//   margin: auto;
+//   margin-bottom: 10%;
+//   margin-top: 10%;
+//   width: 65%;
+// }
+//
+// td {
+//   border: 6px solid #222;
+//   width: 33.333%;
+//   text-align: center;
+//   padding-top: 25px;
+// }
+//
+// td:after {
+//   content: '';
+//   display: block;
+//   margin-top: 30%;
+// }
