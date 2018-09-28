@@ -19,6 +19,8 @@ $(() => {
 
 // Game events
 $(() => {
-  $(document).ready(gameEvents.startRound)
-  $('.square').on('click', gameEvents.startRound)
+  $('document').ready(gameEvents.startRound)
+  $('.square').on('click', gameEvents.playerTurn)
+  // $('.square').on('click', gameEvents.inputToArray)
+  $('#start-new-game').click(gameEvents.startNewGame)
 })
