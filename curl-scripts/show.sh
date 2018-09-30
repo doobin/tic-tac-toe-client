@@ -1,11 +1,11 @@
-# sh curl-scripts/json/index.sh
-curl "https://tic-tac-toe-wdi.herokuapp.com/games" \
+# sh curl-scripts/json/show.sh
+curl "https://tic-tac-toe-wdi.herokuapp.com/games/${ID}" \
   --include \
   --request GET \
   --header "Content-Type: application/json" \
   --header "Authorization: Token token=${TOKEN}" \
   # --data '{
-  #   "games": [
+  #   "game": [
   #     {
   #       "id": "'"${ID}"'",
   #       "cells": "'"${CELLS}"'",

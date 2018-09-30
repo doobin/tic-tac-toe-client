@@ -5,6 +5,7 @@
 
 const authEvents = require('./auth/events.js')
 const gameEvents = require('./game/events.js')
+const actionEvents = require('./game/actionevents.js')
 
 // use require without a reference to ensure a file is bundled
 // require('./example')
@@ -19,7 +20,16 @@ $(() => {
 
 // Game events
 $(() => {
-  $('#game-board').ready(gameEvents.startRound)
+  $('#game-board').ready(gameEvents.startRound, actionEvents.onNewGame)
   $('.square').on('click', gameEvents.playerTurn)
-  $('#start-new-game').on('click', gameEvents.startNewGame)
+  $('#start-new-game').on('click', gameEvents.startRound)
+  $('.square').on('click', gameEvents.turn)
+})
+
+// Game Action authEvents
+$(() => {
+  $('#start-new-game').on('click', actionEvents.onNewGame)
+  $('#show-all-games').on('click', actionEvents.onShowAllGames)
+  $('#show-one-game').on('submit', actionEvents.onShowOneGame)
+  $('.square').on('click', actionEvents.onUpdateGame)
 })

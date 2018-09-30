@@ -46,20 +46,32 @@
       <br>
       <table border="1" id="game-board">
         <tr>
-          <td class="square"></td>
-          <td class="square"></td>
-          <td class="square"></td>
+          <td id="0" class="square"></td>
+          <td id="1" class="square"></td>
+          <td id="2" class="square"></td>
         </tr>
         <tr>
-          <td class="square"></td>
-          <td class="square"></td>
-          <td class="square"></td>
+          <td id="3" class="square"></td>
+          <td id="4" class="square"></td>
+          <td id="5" class="square"></td>
         </tr>
         <tr>
-          <td class="square"></td>
-          <td class="square"></td>
-          <td class="square"></td>
+          <td id="6" class="square"></td>
+          <td id="7" class="square"></td>
+          <td id="8" class="square"></td>
         </tr>
       </table>
+      <br>
+      <button id="show-all-games" class="hidden"> Show All Games </button>
+      <br>
+      <form id="show-one-game">
+        <legend> Show One Game </legend>
+        <input required type="text" name="game[id]" placeholder="Input Game ID">
+        <input type="submit">
+      </form>
+      <br>
+      <div id="content">
+
+      </div>
     </body>
 </html>
