@@ -7,10 +7,10 @@ curl "https://tic-tac-toe-wdi.herokuapp.com/games/${ID}" \
   --data '{
     "game": {
       "cell": {
-        "index": $(event.target.id),
-        "value": $(event.target.innerText)
+        "index": "'${INDEX}'",
+        "value": "'${VALUE}'"
       },
-      "over":
+      "over": "'${OVER}'"
     }
 
   echo

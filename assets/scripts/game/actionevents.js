@@ -6,10 +6,10 @@ const ui = require('./ui.js')
 const store = require('../store.js')
 
 const onNewGame = () => {
-  // console.log('gamedata: ', event)
+  // console.log(data)
   event.preventDefault()
   api.newGame()
-    .then(console.log)
+    .then(ui.newGameSuccess)
     .catch(console.log)
 }
 
@@ -30,10 +30,11 @@ const onShowOneGame = (event) => {
     .catch(console.log)
 }
 
-const onUpdateGame = (event) => {
+const onUpdateGame = () => {
+  console.log()
   event.preventDefault()
-  const gameData = store.game
-  api.updateGame(gameData)
+  // const gameData = store.game
+  api.updateGame()
     .then(console.log)
     .catch(console.log)
 }

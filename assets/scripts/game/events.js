@@ -43,7 +43,11 @@ const playerTurn = (event) => {
       currentTurn -= 1
     }
   } else {
+    // tells user to pick another square
     setMessage('PICK ANOTHER SQUARE')
+    // check for tie
+  } if (numberOfTurns > 8) {
+    setMessage('Tie Game! Start New Game!')
   }
   const results = playerTurnData()
   console.log(checkForWinner(results))
