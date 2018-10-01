@@ -37,10 +37,8 @@ const showOneGame = (gameData) => {
   })
 }
 
-const updateGame = (index, value, over) => {
-  console.log(index)
-  console.log(value)
-  console.log(over)
+const updateGame = (index, value, winner) => {
+  console.log(winner)
   const gameId = store.game.id
   return $.ajax({
     url: config.apiUrl + `/games/${gameId}`,
@@ -54,7 +52,7 @@ const updateGame = (index, value, over) => {
           'index': index,
           'value': value
         },
-        'over': true || false
+        'over': winner
       }
     }
   })

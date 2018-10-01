@@ -23,7 +23,7 @@ $(() => {
   $('#game-board').ready(gameEvents.startRound, actionEvents.onNewGame)
   $('.square').on('click', gameEvents.playerTurn)
   $('#start-new-game').on('click', gameEvents.startRound)
-  $('.square').on('click', gameEvents.turn)
+  // $('.square').on('click', gameEvents.playerTurnData)
 })
 
 // Game Action authEvents
@@ -31,5 +31,5 @@ $(() => {
   $('#start-new-game').on('click', actionEvents.onNewGame)
   $('#show-all-games').on('click', actionEvents.onShowAllGames)
   $('#show-one-game').on('submit', actionEvents.onShowOneGame)
-  $('.square').on('click', actionEvents.onUpdateGame)
+  // $('.square').on('click', actionEvents.onUpdateGame)
 })

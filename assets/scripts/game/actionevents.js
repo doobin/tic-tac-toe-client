@@ -3,7 +3,7 @@
 const getFormFields = require('../../../lib/get-form-fields.js')
 const api = require('./api.js')
 const ui = require('./ui.js')
-const store = require('../store.js')
+// const store = require('../store.js')
 
 const onNewGame = () => {
   // console.log(data)
@@ -17,7 +17,7 @@ const onShowAllGames = (event) => {
   console.log(event)
   event.preventDefault()
   api.getAllGames()
-    .then(console.log)
+    .then(ui.showAllGamesSuccess)
     .catch(console.log)
 }
 
@@ -26,16 +26,14 @@ const onShowOneGame = (event) => {
   const gameData = getFormFields(event.target)
   console.log(gameData)
   api.showOneGame(gameData)
-    .then(console.log)
+    .then(ui.showOneGameSuccess)
     .catch(console.log)
 }
 
-const onUpdateGame = () => {
-  console.log()
+const onUpdateGame = (index, value, winner) => {
   event.preventDefault()
-  // const gameData = store.game
-  api.updateGame()
-    .then(console.log)
+  api.updateGame(index, value, winner)
+    .then(ui.updateGameSuccess)
     .catch(console.log)
 }
 
