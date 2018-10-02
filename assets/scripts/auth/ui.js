@@ -52,8 +52,13 @@ const signOutSuccess = function () {
   $('#display-message').css('color', 'green')
   $('#sign-up-form').show()
   $('#sign-in-form').show()
-  $('#change-password-form').hide('hidden')
-  $('#sign-out').hide('hidden')
+  $('#start-new-game').addClass('hidden')
+  $('#message-board').addClass('hidden')
+  $('#play-area').addClass('hidden')
+  $('#show-all-games').addClass('hidden')
+  $('#show-one-game').addClass('hidden')
+  $('#change-password-form').addClass('hidden')
+  $('#sign-out').addClass('hidden')
   $('#content').empty()
 }
 
