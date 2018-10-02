@@ -50,6 +50,7 @@ const playerTurn = (event) => {
       setMessage(playerO + "'s" + ' TURN')
       currentTurn += 1
     } else {
+      // add o to game board
       $(event.target).text(playerO)
       // change value to 'o'
       value = 'o'
@@ -58,7 +59,7 @@ const playerTurn = (event) => {
     }
     // create results variable by envoking playerTurn function
     const results = playerTurnData()
-    // evoke checkForWinner function with results array
+    // envoke checkForWinner function with results array
     checkForWinner(results)
     // send data to required data to application
     actionEvents.onUpdateGame(index, value, winner)

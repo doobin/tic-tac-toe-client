@@ -20,7 +20,6 @@ $(() => {
 
 // Game events
 $(() => {
-  // $('#game-board').ready(gameEvents.startRound, actionEvents.onNewGame)
   $('.square').on('click', gameEvents.playerTurn)
   $('#start-new-game').on('click', gameEvents.startRound)
 })
