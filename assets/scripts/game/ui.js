@@ -3,7 +3,6 @@
 const store = require('../store.js')
 
 const showAllGamesSuccess = (response) => {
-  console.log(response)
   $('#content').html('')
   response.games.forEach(game => {
     const gameHTML = (`
@@ -13,6 +12,11 @@ const showAllGamesSuccess = (response) => {
       `)
     $('#content').append(gameHTML)
   })
+}
+
+const showAllGamesFailure = () => {
+  $('#content').html('Show All Games Failed')
+  $('#content').css('color', 'red')
 }
 
 const showOneGameSuccess = (response) => {
@@ -26,20 +30,39 @@ const showOneGameSuccess = (response) => {
   $('#show-one-game').trigger('reset')
 }
 
+const showOneGameFailure = () => {
+  $('#content').html('Show One Games Failed')
+  $('#content').css('color', 'red')
+}
+
 const newGameSuccess = (data) => {
-  console.log(data)
-  console.log(store)
   store.game = data.game
+  $('#display-message').html('New Game Sucess')
+  $('#display-message').css('color', 'green')
+  $('#play-area').removeClass('hidden')
+}
+
+const newGameFailure = () => {
+  $('#display-message').html('New Game Failed')
+  $('#display-message').css('color', 'red')
 }
 
 const updateGameSuccess = (data) => {
-  console.log(data)
   store.game = data.game
+}
+
+const updateGameFailure = () => {
+  $('#display-message').html('Update Game Failed')
+  $('#display-message').css('color', 'red')
 }
 
 module.exports = {
   showAllGamesSuccess,
+  showAllGamesFailure,
   showOneGameSuccess,
+  showOneGameFailure,
   newGameSuccess,
-  updateGameSuccess
+  newGameFailure,
+  updateGameSuccess,
+  updateGameFailure
 }

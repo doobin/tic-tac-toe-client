@@ -23,23 +23,6 @@ table {
   text-align: center;
 }
 
-// table {
-//   border-collapse: collapse;
-//   margin: auto;
-//   margin-bottom: 10%;
-//   margin-top: 10%;
-//   width: 65%;
-// }
-//
-// td {
-//   border: 6px solid #222;
-//   width: 33.333%;
-//   text-align: center;
-//   padding-top: 25px;
-// }
-//
-// td:after {
-//   content: '';
-//   display: block;
-//   margin-top: 30%;
-// }
+.hidden {
+  display: none;
+}

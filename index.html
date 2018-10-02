@@ -16,7 +16,7 @@
       <br>
       <h3 id="display-message"></h3>
       <br>
-      <form id="sign-up-form" class="hidden">
+      <form id="sign-up-form" class="hidden_1">
         <legend> Sign Up </legend>
         <input required type="email" name="credentials[email]" placeholder="enter email">
         <input required type="password" name="credentials[password]" placeholder="create password">
@@ -24,7 +24,7 @@
         <input type="submit">
       </form>
       <br>
-      <form id="sign-in-form" class="hidden">
+      <form id="sign-in-form" class="hidden_1">
         <legend> Sign In </legend>
         <input required type="email" name="credentials[email]" placeholder="enter email">
         <input required type="password" name="credentials[password]" placeholder="enter password">
@@ -40,10 +40,11 @@
       <br>
       <button id="sign-out" class="hidden"> Sign Out </button>
       <br>
-      <div id="message-board"></div>
+      <button id="start-new-game" class="hidden"> Start New Game </button>
       <br>
-      <button id="start-new-game"> Start New Game </button>
+      <div id="message-board" class="hidden"></div>
       <br>
+      <div id="play-area" class="hidden">
       <table border="1" id="game-board">
         <tr>
           <td id="0" class="square"></td>
@@ -61,10 +62,11 @@
           <td id="8" class="square"></td>
         </tr>
       </table>
+    </div>
       <br>
       <button id="show-all-games" class="hidden"> Show All Games </button>
       <br>
-      <form id="show-one-game">
+      <form id="show-one-game" class="hidden">
         <legend> Show One Game </legend>
         <input required type="text" name="game[id]" placeholder="Input Game ID">
         <input type="submit">

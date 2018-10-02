@@ -16,42 +16,51 @@ const setMessage = (message) => {
   $('#message-board').text(message)
 }
 
-// game board variables
+// game board variable
 const gameBoard = []
 
-// start round
-const startRound = () => {
-  numberOfTurns = 0
-  currentTurn = 1
-  winner = false
-  $('td').text('')
-  setMessage('X STARTS THE GAME')
-}
+// start round funtion
+// const startRound = () => {
+//   numberOfTurns = 0
+//   currentTurn = 1
+//   winner = false
+//   $('td').text('')
+//   setMessage('X STARTS THE GAME')
+// }
 
 // take turns
 const playerTurn = (event) => {
+  // target id attribute and change from string to number
   const index = parseInt(event.target.getAttribute('id'))
+  // set value to empty string
   let value = ''
+  // check if winner
   if (winner !== false) {
     actionEvents.onNewGame()
     startRound()
-  } else
-  if ($(event.target).text() === '') {
+    // check if element clicked has empty text
+  } else if ($(event.target).text() === '') {
+    // add number of turns each click
     numberOfTurns += 1
+    // add x to game board
     if (currentTurn === 1) {
       $(event.target).text(playerX)
+      // change value to 'x'
       value = 'x'
       setMessage(playerO + "'s" + ' TURN')
       currentTurn += 1
     } else {
       $(event.target).text(playerO)
+      // change value to 'o'
       value = 'o'
       setMessage(playerX + "'s" + ' TURN')
       currentTurn -= 1
     }
-    console.log(winner)
+    // create results variable by envoking playerTurn function
     const results = playerTurnData()
+    // evoke checkForWinner function with results array
     checkForWinner(results)
+    // send data to required data to application
     actionEvents.onUpdateGame(index, value, winner)
   } else {
     // tells user to pick another square
@@ -59,16 +68,15 @@ const playerTurn = (event) => {
     // check for tie
   } if (numberOfTurns > 8) {
     setMessage('Tie Game! Start New Game!')
-    actionEvents.onNewGame()
-    // startRound()
   }
-  // const results = playerTurnData()
-  // console.log(checkForWinner(results))
 }
 
 // put data into game board array
 const playerTurnData = () => {
+  // return selected element in a array
   const turn = gameBoard.slice.call($('.square'))
+  console.log(turn)
+  // map returned element to array
   const result = turn.map((square) => {
     return square.innerText
   })
@@ -76,13 +84,9 @@ const playerTurnData = () => {
   return result
 }
 
-// const winnerFunction = (winnerValue) => {
-//   winner = winnerValue
-//   actionEvents.onUpdateGame(index, value, winner)
-// }
-
-// check for winner
+// check for winner funtion
 const checkForWinner = (result) => {
+  // loop through result array
   for (let i = 0; i < result.length; i++) {
     if (result[0] !== '' && result[0] === result[1] && result[1] === result[2]) {
       setMessage('The Winner is ' + result[0] + ', Start a New Game')
@@ -110,31 +114,24 @@ const checkForWinner = (result) => {
       return true
     } else if (result[0] !== '' && result[0] === result[4] && result[4] === result[8]) {
       setMessage('The Winner is ' + result[0] + ', Start a New Game')
-      console.log('1st' + winner)
-      // winnerFunction(true)
       winner = true
-      console.log('2nd' + winner)
       return true
     } else if (result[2] !== '' && result[2] === result[4] && result[4] === result[6]) {
       setMessage('The Winner is ' + result[2] + ', Start a New Game')
       winner = true
       return true
     }
-    // return false
   }
 }
 
-// const gameData = (index, result, winner) => {
-//   const data = {
-//     'game': {
-//       'cell': {
-//         'index': index, // $(event.target.id),
-//         'value': result // $(event.target.innerText)
-//       },
-//       'over': winner
-//     }
-//   }
-// }
+// start round funtion
+const startRound = () => {
+  numberOfTurns = 0
+  currentTurn = 1
+  winner = false
+  $('td').text('')
+  setMessage('X STARTS THE GAME')
+}
 
 module.exports = {
   playerX,

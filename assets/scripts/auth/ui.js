@@ -19,10 +19,14 @@ const signInSuccess = function (response) {
   $('#display-message').css('color', 'green')
   $('#sign-in-form').trigger('reset')
   store.user = response.user
-  $('#sign-up-form').hide('hidden')
-  $('#sign-in-form').hide('hidden')
+  $('#sign-up-form').hide('hidden_1')
+  $('#sign-in-form').hide('hidden_1')
   $('#change-password-form').removeClass('hidden')
   $('#sign-out').removeClass('hidden')
+  $('#start-new-game').removeClass('hidden')
+  $('#message-board').removeClass('hidden')
+  $('#show-all-games').removeClass('hidden')
+  $('#show-one-game').removeClass('hidden')
 }
 
 const signInFailure = function () {
@@ -46,10 +50,11 @@ const passwordChangeFailure = function () {
 const signOutSuccess = function () {
   $('#display-message').html('Sign Out Success')
   $('#display-message').css('color', 'green')
-  $('#sign-up-form').removeClass('hidden')
-  $('#sign-in-form').removeClass('hidden')
+  $('#sign-up-form').show()
+  $('#sign-in-form').show()
   $('#change-password-form').hide('hidden')
   $('#sign-out').hide('hidden')
+  $('#content').empty()
 }
 
 const signOutFailure = function () {
