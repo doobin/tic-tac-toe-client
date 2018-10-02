@@ -20,13 +20,13 @@ const setMessage = (message) => {
 const gameBoard = []
 
 // start round funtion
-// const startRound = () => {
-//   numberOfTurns = 0
-//   currentTurn = 1
-//   winner = false
-//   $('td').text('')
-//   setMessage('X STARTS THE GAME')
-// }
+const startRound = () => {
+  numberOfTurns = 0
+  currentTurn = 1
+  winner = false
+  $('td').text('')
+  setMessage('X STARTS THE GAME')
+}
 
 // take turns
 const playerTurn = (event) => {
@@ -122,15 +122,6 @@ const checkForWinner = (result) => {
       return true
     }
   }
-}
-
-// start round funtion
-const startRound = () => {
-  numberOfTurns = 0
-  currentTurn = 1
-  winner = false
-  $('td').text('')
-  setMessage('X STARTS THE GAME')
 }
 
 module.exports = {
