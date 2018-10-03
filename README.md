@@ -15,7 +15,7 @@ Tic-tac-toe (also known as noughts and crosses or Xs and Os) is a paper-and-penc
 
 ## Development Process
 
-At the start of the project, I reviewed the requirements documentation (in full detail) and developed a game plan.
+At the start of the project, I reviewed the requirements documentation (in full detail) and developed a game plan accordingly.
 
 Game Plan
 
@@ -25,15 +25,13 @@ Game Plan
 
 2. Development(Stage 1)
   -Basic User Interface Design (HTML and CSS)
-  -User Authentication (API, ajax)
-  -Post, Get, Patch, Delete (API, ajax)
+  -Back-end Communication: User Authentication
 
 3. Development(Stage 2)
   -Game Logic
 
 4. Development(Stage 3)
-  -Game Event communication
-  -Post, Get, Patch, Delete (API, ajax)
+  -Back-end Communication: Game events
 
 5. Development(Stage 4)
   -Implement Final User Interface Design (HTML, CSS, Bootstrap)
