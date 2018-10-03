@@ -76,12 +76,10 @@ const playerTurn = (event) => {
 const playerTurnData = () => {
   // return selected element in a array
   const turn = gameBoard.slice.call($('.square'))
-  console.log(turn)
   // map returned element to array
   const result = turn.map((square) => {
     return square.innerText
   })
-  console.log(result)
   return result
 }
 
