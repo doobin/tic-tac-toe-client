@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Tic Tac Toe</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <h1>Tic Tac Toe</h1>
+      <br>
+      <h3 id="display-message"></h3>
+      <br>
+      <form id="sign-up-form" class="hidden_1">
+        <legend> Sign Up </legend>
+        <input required type="email" name="credentials[email]" placeholder="enter email">
+        <input required type="password" name="credentials[password]" placeholder="create password">
+        <input required type="password" name="credentials[password_confirmation]" placeholder="confirm password">
+        <input type="submit">
+      </form>
+      <br>
+      <form id="sign-in-form" class="hidden_1">
+        <legend> Sign In </legend>
+        <input required type="email" name="credentials[email]" placeholder="enter email">
+        <input required type="password" name="credentials[password]" placeholder="enter password">
+        <input type="submit">
+      </form>
+      <br>
+      <form id="change-password-form" class="hidden">
+        <legend> Change Password </legend>
+        <input required type="password" name="passwords[old]" placeholder="enter old password">
+        <input required type="password" name="passwords[new]" placeholder="enter new password">
+        <input type="submit">
+      </form>
+      <br>
+      <button id="sign-out" class="hidden"> Sign Out </button>
+      <br>
+      <button id="start-new-game" class="hidden"> Start New Game </button>
+      <br>
+      <div id="message-board" class="hidden"></div>
+      <br>
+      <div id="play-area" class="hidden">
+      <table border="1" id="game-board">
+        <tr>
+          <td id="0" class="square"></td>
+          <td id="1" class="square"></td>
+          <td id="2" class="square"></td>
+        </tr>
+        <tr>
+          <td id="3" class="square"></td>
+          <td id="4" class="square"></td>
+          <td id="5" class="square"></td>
+        </tr>
+        <tr>
+          <td id="6" class="square"></td>
+          <td id="7" class="square"></td>
+          <td id="8" class="square"></td>
+        </tr>
+      </table>
+    </div>
+      <br>
+      <button id="show-all-games" class="hidden"> Show All Games </button>
+      <br>
+      <form id="show-one-game" class="hidden">
+        <legend> Show One Game </legend>
+        <input required type="text" name="game[id]" placeholder="Input Game ID">
+        <input type="submit">
+      </form>
+      <br>
+      <div id="content">
+
+      </div>
+    </body>
+</html>
