@@ -1,6 +1,6 @@
 'use strict'
 // const api = require('./api.js')
-const actionEvents = require('./actionEvents.js')
+const actionEvents = require('./actionevents.js')
 // player variables
 const playerX = 'x'
 const playerO = 'o'
@@ -26,6 +26,20 @@ const startRound = () => {
   winner = false
   $('td').text('')
   setMessage('X STARTS THE GAME')
+}
+
+// put data into game board array
+const playerData = () => {
+  // return selected element in a array
+  const turn = gameBoard.slice.call($('.square'))
+  console.log(turn)
+  // map returned element to array
+  const result = turn.map((square) => {
+    console.log(square)
+    return square.innerHTML
+  })
+  console.log(result)
+  return result
 }
 
 // take turns
@@ -58,7 +72,7 @@ const playerTurn = (event) => {
       currentTurn -= 1
     }
     // create results variable by envoking playerTurn function
-    const results = playerTurnData()
+    const results = playerData()
     // envoke checkForWinner function with results array
     checkForWinner(results)
     // send data to required data to application
@@ -70,17 +84,6 @@ const playerTurn = (event) => {
   } if (numberOfTurns > 8) {
     setMessage('Tie Game! Start New Game!')
   }
-}
-
-// put data into game board array
-const playerTurnData = () => {
-  // return selected element in a array
-  const turn = gameBoard.slice.call($('.square'))
-  // map returned element to array
-  const result = turn.map((square) => {
-    return square.innerText
-  })
-  return result
 }
 
 // check for winner funtion
@@ -131,6 +134,6 @@ module.exports = {
   setMessage,
   startRound,
   playerTurn,
-  playerTurnData,
+  playerData,
   checkForWinner
 }
