@@ -32,13 +32,10 @@ const startRound = () => {
 const playerData = () => {
   // return selected element in a array
   const turn = gameBoard.slice.call($('.square'))
-  console.log(turn)
   // map returned element to array
   const result = turn.map((square) => {
-    console.log(square)
     return square.innerHTML
   })
-  console.log(result)
   return result
 }
 
